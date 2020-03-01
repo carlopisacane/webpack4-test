@@ -1,11 +1,12 @@
 import './hello-world-button.scss'
 
 class HelloWorldButton {
+	buttonCssClass = 'hello-world-button'
 	render() {
 		const button = document.createElement('button')
 		button.innerHTML = 'Hello World'
-		button.classList.add('hello-world-button')
 		const body = document.querySelector('body')
+		button.classList.add(this.buttonCssClass)
 
 		button.onclick = function() {
 			const p = document.createElement('p')
@@ -14,7 +15,6 @@ class HelloWorldButton {
 			body.appendChild(p)
 		}
 		body.appendChild(button)
-		console.log('test')
 	}
 }
 
