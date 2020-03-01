@@ -2,9 +2,12 @@ const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-	entry: './src/index.js',
+	entry: {
+		helloWorld: './src/hello-world.js',
+		chrono: './src/chrono.js'
+	},
 	output: {
-		filename: 'bundle.js',
+		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, './dist'),
 		publicPath: ''
 	},
@@ -48,9 +51,18 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
+			filename: 'hello-world.html',
+			chunks: [ 'helloWorld', 'vendors~chrono~helloWorld' ],
 			title: 'Hello world HBS',
-			template: 'src/index.hbs',
+			template: 'src/page-template.hbs',
 			description: 'some description'
+		}),
+		new HtmlWebpackPlugin({
+			filename: 'chrono.html',
+			chunks: [ 'chrono', 'vendors~chrono~helloWorld' ],
+			title: 'chrono',
+			template: 'src/page-template.hbs',
+			description: 'chrono'
 		})
 	]
 }
