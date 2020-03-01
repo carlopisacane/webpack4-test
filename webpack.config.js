@@ -44,6 +44,12 @@ module.exports = {
 			filename: 'styles.[contenthash].css'
 		}),
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin()
+		new HtmlWebpackPlugin({
+			title: 'Hello world',
+			filename: 'subfolder/custom_filename.html',
+			meta: {
+				viewport: 'width=device-width, initial-scale=1'
+			}
+		})
 	]
 }
