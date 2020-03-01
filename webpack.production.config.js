@@ -59,14 +59,14 @@ module.exports = {
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: 'hello-world.html',
-			chunks: [ 'helloWorld', 'chrono_helloWorld' ],
+			chunks: [ 'helloWorld', 'vendors_chrono_helloWorld' ],
 			title: 'Hello world HBS',
 			template: 'src/page-template.hbs',
 			description: 'some description'
 		}),
 		new HtmlWebpackPlugin({
 			filename: 'chrono.html',
-			chunks: [ 'chrono', 'chrono_helloWorld' ],
+			chunks: [ 'chrono', 'vendors_chrono_helloWorld' ],
 			title: 'chrono',
 			template: 'src/page-template.hbs',
 			description: 'chrono'
