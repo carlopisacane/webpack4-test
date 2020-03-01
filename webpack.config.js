@@ -1,11 +1,11 @@
 const path = require('path')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
 	entry: './src/index.js',
 	output: {
-		filename: 'bundle.js',
+		filename: 'bundle.[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
 		publicPath: 'dist/'
 	},
@@ -40,7 +40,7 @@ module.exports = {
 	plugins: [
 		new UglifyJsPlugin(),
 		new MiniCssExtractPlugin({
-			filename: 'styles.css'
+			filename: 'styles.[contenthash].css'
 		})
 	]
 }
