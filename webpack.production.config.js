@@ -11,13 +11,13 @@ module.exports = {
 	output: {
 		filename: '[name].[contenthash].js',
 		path: path.resolve(__dirname, './dist'),
-		publicPath: ''
+		publicPath: '/static/'
 	},
 	mode: 'production',
 	optimization: {
 		splitChunks: {
 			chunks: 'all',
-			minSize: 7000,
+			minSize: 10000,
 			automaticNameDelimiter: '_'
 		}
 	},
@@ -54,19 +54,19 @@ module.exports = {
 	},
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: '[name].[contenthash].css'
+			filename: 'styles.[contenthash].css'
 		}),
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({
 			filename: 'hello-world.html',
-			chunks: [ 'helloWorld', 'vendors~chrono~helloWorld' ],
+			chunks: [ 'helloWorld', 'chrono_helloWorld' ],
 			title: 'Hello world HBS',
 			template: 'src/page-template.hbs',
 			description: 'some description'
 		}),
 		new HtmlWebpackPlugin({
 			filename: 'chrono.html',
-			chunks: [ 'chrono', 'vendors~chrono~helloWorld' ],
+			chunks: [ 'chrono', 'chrono_helloWorld' ],
 			title: 'chrono',
 			template: 'src/page-template.hbs',
 			description: 'chrono'
