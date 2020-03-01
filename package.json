@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --config webpack.production.config.js",
-		"dev": "webpack-dev-server --config webpack.dev.config.js --hot"
+		"dev": "webpack-dev-server --config webpack.dev.config.js --hot",
+		"start": "node src/server.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -28,6 +29,7 @@
 	},
 	"dependencies": {
 		"css-loader": "^3.4.2",
+		"express": "^4.17.1",
 		"handlebars": "^4.7.3",
 		"handlebars-loader": "^1.7.1",
 		"lodash": "^4.17.15",
