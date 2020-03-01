@@ -3,5 +3,5 @@ import ChronoImage from './components/chrono-image/chrono-image'
 
 const heading = new Heading()
 heading.render()
-const chronoImage = ChronoImage()
+const chronoImage = new ChronoImage()
 chronoImage.render()
